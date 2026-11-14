@@ -2,6 +2,11 @@
   "name": "hub",
   "private": true,
   "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck"
+  },
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -15,6 +20,7 @@
     }
   },
   "devDependencies": {
+    "turbo": "catalog:",
     "typescript": "catalog:"
   }
 }
