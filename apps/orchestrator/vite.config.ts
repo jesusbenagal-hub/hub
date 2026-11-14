@@ -14,6 +14,10 @@ export default defineConfig({
           entry: "http://localhost:5174/mf-manifest.json",
         },
       },
+      shared: {
+        react: { singleton: true },
+        "react-dom": { singleton: true },
+      },
       dts: false,
     }),
   ],
