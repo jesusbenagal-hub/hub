@@ -249,6 +249,9 @@ importers:
       '@hub/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@module-federation/vite':
+        specifier: 'catalog:'
+        version: 1.24.0(typescript@6.0.3)(vite@8.3.8)
       '@types/react':
         specifier: 'catalog:'
         version: 19.3.0

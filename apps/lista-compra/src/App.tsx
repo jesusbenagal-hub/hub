@@ -1,4 +1,4 @@
-const productos = ["Leche", "Pan", "Huevos"];
+const productos = ["Leche", "Pan", "Huevos", "Tomates", "Queso"];
 
 export function App() {
   return (
