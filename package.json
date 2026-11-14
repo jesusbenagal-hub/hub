@@ -1,0 +1,20 @@
+{
+  "name": "hub",
+  "private": true,
+  "type": "module",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^26.13.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^12.18.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}
