@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router";
 import { App } from "./App";
 import { setupRemotes } from "./remotes";
 
@@ -12,6 +13,8 @@ const remotes = await setupRemotes();
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App remotes={remotes} />
+    <BrowserRouter>
+      <App remotes={remotes} />
+    </BrowserRouter>
   </StrictMode>,
 );

@@ -12,7 +12,8 @@
   "dependencies": {
     "@module-federation/runtime": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "react-router": "catalog:"
   },
   "devDependencies": {
     "@hub/config": "workspace:*",

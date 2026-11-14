@@ -13,3 +13,4 @@ catalog:
   turbo: ^2.11.0
   "@module-federation/vite": ^1.24.0
   "@module-federation/runtime": 2.9.3
+  react-router: ^8.5.0
