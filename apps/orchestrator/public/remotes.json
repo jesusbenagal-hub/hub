@@ -1,0 +1,9 @@
+[
+  {
+    "appId": "lista-compra",
+    "mfName": "lista_compra",
+    "entry": "http://localhost:5174/mf-manifest.json",
+    "route": "/lista-compra",
+    "title": "Lista de la compra"
+  }
+]

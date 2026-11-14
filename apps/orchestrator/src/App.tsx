@@ -1,16 +1,20 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import type { LoadedRemote } from "./remotes";
 
-const ListaCompraApp = lazy(() =>
-  import("lista_compra/App").then((module) => ({ default: module.App })),
-);
+interface AppProps {
+  remotes: LoadedRemote[];
+}
 
-export function App() {
+export function App({ remotes }: AppProps) {
   return (
     <main>
       <h1>Hub</h1>
-      <Suspense fallback={<p>Cargando lista de la compra…</p>}>
-        <ListaCompraApp />
-      </Suspense>
+      {remotes.length === 0 && <p>No hay ninguna app disponible.</p>}
+      {remotes.map(({ definition, Component }) => (
+        <Suspense key={definition.appId} fallback={<p>Cargando «{definition.title}»…</p>}>
+          <Component />
+        </Suspense>
+      ))}
     </main>
   );
 }

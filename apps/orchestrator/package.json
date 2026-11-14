@@ -10,6 +10,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@module-federation/runtime": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

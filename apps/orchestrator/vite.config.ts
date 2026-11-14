@@ -7,13 +7,6 @@ export default defineConfig({
     react(),
     federation({
       name: "orchestrator",
-      remotes: {
-        lista_compra: {
-          type: "module",
-          name: "lista_compra",
-          entry: "http://localhost:5174/mf-manifest.json",
-        },
-      },
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },

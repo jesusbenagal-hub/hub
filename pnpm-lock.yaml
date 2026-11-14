@@ -164,6 +164,9 @@ settings:
 
 catalogs:
   default:
+    '@module-federation/runtime':
+      specifier: 2.9.3
+      version: 2.9.3
     '@module-federation/vite':
       specifier: ^1.24.0
       version: 1.24.0
@@ -239,6 +242,9 @@ importers:
 
   apps/orchestrator:
     dependencies:
+      '@module-federation/runtime':
+        specifier: 'catalog:'
+        version: 2.9.3
       react:
         specifier: 'catalog:'
         version: 19.3.1
