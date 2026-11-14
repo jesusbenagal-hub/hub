@@ -1,3 +1,4 @@
+import type { RemoteAppModule, RemoteAppProps } from "@hub/shared";
 import { loadRemote, registerRemotes } from "@module-federation/runtime";
 import { lazy, type ComponentType, type LazyExoticComponent } from "react";
 
@@ -11,12 +12,9 @@ export interface RemoteDefinition {
 
 export interface LoadedRemote {
   definition: RemoteDefinition;
-  Component: LazyExoticComponent<ComponentType>;
+  Component: LazyExoticComponent<ComponentType<RemoteAppProps>>;
 }
 
-interface RemoteAppModule {
-  App: ComponentType;
-}
 
 const REQUIRED_FIELDS = ["appId", "mfName", "entry", "route", "title"] as const;
 

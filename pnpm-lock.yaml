@@ -214,12 +214,18 @@ importers:
 
   apps/lista-compra:
     dependencies:
+      '@hub/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       react:
         specifier: 'catalog:'
         version: 19.3.1
       react-dom:
         specifier: 'catalog:'
         version: 19.3.1(react@19.3.1)
+      react-router:
+        specifier: 'catalog:'
+        version: 8.5.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@hub/config':
         specifier: workspace:*
@@ -245,6 +251,9 @@ importers:
 
   apps/orchestrator:
     dependencies:
+      '@hub/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@module-federation/runtime':
         specifier: 'catalog:'
         version: 2.9.3
@@ -281,6 +290,18 @@ importers:
         version: 8.3.8
 
   packages/config: {}
+
+  packages/shared:
+    devDependencies:
+      '@hub/config':
+        specifier: workspace:*
+        version: link:../config
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
 
 packages:
 
