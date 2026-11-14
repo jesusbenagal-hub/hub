@@ -5,6 +5,21 @@
   "type": "module",
   "exports": {
     "./tsconfig/base.json": "./tsconfig/base.json",
-    "./tsconfig/react-app.json": "./tsconfig/react-app.json"
+    "./tsconfig/react-app.json": "./tsconfig/react-app.json",
+    "./vite": "./src/vite.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@module-federation/vite": "catalog:",
+    "@vitejs/plugin-react": "catalog:"
+  },
+  "peerDependencies": {
+    "vite": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vite": "catalog:"
   }
 }
