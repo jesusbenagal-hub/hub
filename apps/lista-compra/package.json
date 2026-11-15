@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run"
   },
   "dependencies": {
     "@hub/shared": "workspace:*",
@@ -23,6 +24,12 @@
     "typescript": "catalog:",
     "vite": "catalog:",
     "eslint": "catalog:",
-    "jiti": "catalog:"
+    "jiti": "catalog:",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "jsdom": "catalog:",
+    "vitest": "catalog:"
   }
 }

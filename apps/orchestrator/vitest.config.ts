@@ -1,3 +1,3 @@
-import { baseTestConfig } from "@hub/config/vitest";
+import { reactTestConfig } from "@hub/config/vitest";
 
-export default baseTestConfig;
+export default reactTestConfig;
