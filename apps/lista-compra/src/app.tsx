@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes } from "react-router";
 
-import { Historial } from "./Historial";
-import { Lista } from "./Lista";
+import { HistoryPage } from "./pages/history-page/history-page";
+import { ShoppingListPage } from "./pages/shopping-list-page/shopping-list-page";
 
 export function App() {
   return (
@@ -14,8 +14,8 @@ export function App() {
         · <NavLink to="historial">Historial</NavLink>
       </nav>
       <Routes>
-        <Route index element={<Lista />} />
-        <Route path="historial" element={<Historial />} />
+        <Route index element={<ShoppingListPage />} />
+        <Route path="historial" element={<HistoryPage />} />
       </Routes>
     </section>
   );

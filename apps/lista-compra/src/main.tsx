@@ -2,11 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
-import { App } from "./App";
+import { App } from "./app";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
-  throw new Error("No encuentro el elemento #root en index.html");
+  throw new Error("Missing #root element in index.html");
 }
 
 createRoot(rootElement).render(

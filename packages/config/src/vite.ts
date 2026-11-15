@@ -52,7 +52,7 @@ export function createRemoteConfig({
         filename: "remoteEntry.js",
         manifest: true,
         exposes: {
-          "./App": "./src/App.tsx",
+          "./App": "./src/app.tsx",
         },
         shared: sharedDependencies,
         dts: false,

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export function Historial() {
+export function HistoryPage() {
   return (
     <>
       <p>Aquí verás las compras anteriores.</p>
