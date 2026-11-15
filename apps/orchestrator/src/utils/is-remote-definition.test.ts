@@ -1,7 +1,5 @@
 import { describe, expect, it } from "vitest";
 
-import { Accent } from "@hub/shared";
-
 import { isRemoteDefinition } from "./is-remote-definition";
 
 const validDefinition = {
@@ -10,7 +8,6 @@ const validDefinition = {
   entry: "http://localhost:5174/mf-manifest.json",
   route: "/lista-compra",
   title: "Lista de la compra",
-  accent: "sage",
 };
 
 describe("isRemoteDefinition", () => {
@@ -19,7 +16,9 @@ describe("isRemoteDefinition", () => {
   });
 
   it("accepts an entry with extra fields", () => {
-    expect(isRemoteDefinition({ ...validDefinition, icon: "cart" })).toBe(true);
+    expect(isRemoteDefinition({ ...validDefinition, accent: "green" })).toBe(
+      true,
+    );
   });
 
   it.each([
@@ -43,16 +42,5 @@ describe("isRemoteDefinition", () => {
 
   it("rejects an entry with a field that is not a string", () => {
     expect(isRemoteDefinition({ ...validDefinition, entry: 5174 })).toBe(false);
-  });
-
-  it.each(Object.values(Accent))("accepts the accent %s", (accent) => {
-    expect(isRemoteDefinition({ ...validDefinition, accent })).toBe(true);
-  });
-
-  it.each([
-    { label: "a color outside the palette", accent: "green" },
-    { label: "a number", accent: 1 },
-  ])("rejects an accent that is $label", ({ accent }) => {
-    expect(isRemoteDefinition({ ...validDefinition, accent })).toBe(false);
   });
 });

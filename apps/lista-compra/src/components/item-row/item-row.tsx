@@ -8,12 +8,7 @@ export function ItemRow({ name, isPurchased, onToggle }: ItemRowProps) {
   return (
     <li>
       <label>
-        <input
-          type="checkbox"
-          className="accent-accent"
-          checked={isPurchased}
-          onChange={onToggle}
-        />
+        <input type="checkbox" checked={isPurchased} onChange={onToggle} />
         {name}
       </label>
     </li>
