@@ -167,5 +167,26 @@ export const reactConfig = defineConfig(baseConfig, {
     "react-hooks/exhaustive-deps": "error",
     "react-hooks/incompatible-library": "error",
     "react-hooks/unsupported-syntax": "error",
+    // @hub/ui's Label must wrap one of its controls or point to it (htmlFor).
+    "jsx-a11y-x/label-has-associated-control": [
+      "error",
+      {
+        labelComponents: ["Label"],
+        controlComponents: ["Checkbox", "Input"],
+        assert: "either",
+      },
+    ],
+    // Module Federation shares @hub/ui by its name: a file path skips it.
+    "no-restricted-imports": [
+      "error",
+      {
+        patterns: [
+          {
+            group: ["@hub/ui/*"],
+            message: 'Import from "@hub/ui", the copy the hub shares.',
+          },
+        ],
+      },
+    ],
   },
 });

@@ -1,3 +1,5 @@
+import { Checkbox, Label } from "@hub/ui";
+
 interface ItemRowProps {
   name: string;
   isPurchased: boolean;
@@ -7,15 +9,10 @@ interface ItemRowProps {
 export function ItemRow({ name, isPurchased, onToggle }: ItemRowProps) {
   return (
     <li>
-      <label>
-        <input
-          type="checkbox"
-          className="accent-accent"
-          checked={isPurchased}
-          onChange={onToggle}
-        />
+      <Label className="py-1 text-sm font-normal">
+        <Checkbox checked={isPurchased} onCheckedChange={onToggle} />
         {name}
-      </label>
+      </Label>
     </li>
   );
 }

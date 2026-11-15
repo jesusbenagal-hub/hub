@@ -8,8 +8,8 @@ const sharedDependencies = {
   react: { singleton: true },
   "react-dom": { singleton: true },
   "react-router": { singleton: true },
+  "@hub/ui": { singleton: true },
 };
-
 interface AppConfigOptions {
   /** Name in the Module Federation runtime (the `mfName` of a remote). */
   name: string;

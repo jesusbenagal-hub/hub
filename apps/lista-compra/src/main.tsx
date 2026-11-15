@@ -6,8 +6,6 @@ import { Accent } from "@hub/shared";
 
 import { App } from "./app";
 
-import "./standalone.css";
-
 // In the hub, the host sets the accent from remotes.json.
 document.documentElement.dataset.accent = Accent.Sage;
 

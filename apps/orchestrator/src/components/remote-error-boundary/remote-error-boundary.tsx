@@ -1,7 +1,7 @@
 import { ArrowClockwiseIcon } from "@phosphor-icons/react";
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
-import { Button } from "@hub/ui/components/button";
+import { Button } from "@hub/ui";
 
 interface RemoteErrorBoundaryProps {
   title: string;

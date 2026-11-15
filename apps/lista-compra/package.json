@@ -16,7 +16,8 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router": "catalog:",
-    "@hub/tokens": "workspace:*"
+    "@hub/tokens": "workspace:*",
+    "@hub/ui": "workspace:*"
   },
   "devDependencies": {
     "@hub/config": "workspace:*",
