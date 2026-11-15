@@ -15,7 +15,6 @@ export interface LoadedRemote {
   Component: LazyExoticComponent<ComponentType<RemoteAppProps>>;
 }
 
-
 const REQUIRED_FIELDS = ["appId", "mfName", "entry", "route", "title"] as const;
 
 function isRemoteDefinition(value: unknown): value is RemoteDefinition {
@@ -41,7 +40,9 @@ async function fetchRemoteDefinitions(): Promise<RemoteDefinition[]> {
 function createRemoteComponent(definition: RemoteDefinition) {
   return lazy(async () => {
     try {
-      const module = await loadRemote<RemoteAppModule>(`${definition.mfName}/App`);
+      const module = await loadRemote<RemoteAppModule>(
+        `${definition.mfName}/App`,
+      );
       if (!module) {
         throw new Error(`${definition.mfName}/App no devolvió ningún módulo`);
       }
@@ -51,7 +52,8 @@ function createRemoteComponent(definition: RemoteDefinition) {
       return {
         default: () => (
           <p role="alert">
-            No se ha podido cargar «{definition.title}». Prueba a recargar dentro de un rato.
+            No se ha podido cargar «{definition.title}». Prueba a recargar
+            dentro de un rato.
           </p>
         ),
       };

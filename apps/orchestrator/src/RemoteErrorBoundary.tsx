@@ -20,7 +20,11 @@ export class RemoteErrorBoundary extends Component<
   }
 
   override componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error(`«${this.props.title}» ha fallado al pintarse`, error, info.componentStack);
+    console.error(
+      `«${this.props.title}» ha fallado al pintarse`,
+      error,
+      info.componentStack,
+    );
   }
 
   override render() {
@@ -28,7 +32,10 @@ export class RemoteErrorBoundary extends Component<
       return (
         <div role="alert">
           <p>«{this.props.title}» ha tenido un problema.</p>
-          <button type="button" onClick={() => this.setState({ hasError: false })}>
+          <button
+            type="button"
+            onClick={() => this.setState({ hasError: false })}
+          >
             Reintentar
           </button>
         </div>

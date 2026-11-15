@@ -39,7 +39,10 @@ export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
 }
 
 /** Configuración de Vite para un remote: expone `./App` y publica su manifiesto. */
-export function createRemoteConfig({ name, port }: AppConfigOptions): UserConfig {
+export function createRemoteConfig({
+  name,
+  port,
+}: AppConfigOptions): UserConfig {
   const { server, preview } = serverOptions(port);
   return defineConfig({
     plugins: [
