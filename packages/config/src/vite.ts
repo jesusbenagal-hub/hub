@@ -2,7 +2,7 @@ import { federation } from "@module-federation/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type UserConfig } from "vite";
 
-/** Dependencias que host y remotes comparten como una única instancia. */
+/** Dependencies the host and the remotes share as a single instance. */
 const sharedDependencies = {
   react: { singleton: true },
   "react-dom": { singleton: true },
@@ -10,9 +10,9 @@ const sharedDependencies = {
 };
 
 interface AppConfigOptions {
-  /** Nombre en el runtime de MF (`mfName`, en snake_case para los remotes). */
+  /** Name in the Module Federation runtime (the `mfName` of a remote). */
   name: string;
-  /** Puerto fijo en local (§4.2). */
+  /** Fixed local port, with `strictPort`. */
   port: number;
 }
 
@@ -23,7 +23,7 @@ function serverOptions(port: number) {
   };
 }
 
-/** Configuración de Vite para el orchestrator (host de Module Federation). */
+/** Vite config for the orchestrator, the Module Federation host. */
 export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
   return defineConfig({
     plugins: [
@@ -38,7 +38,7 @@ export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
   });
 }
 
-/** Configuración de Vite para un remote: expone `./App` y publica su manifiesto. */
+/** Vite config for a remote: exposes `./App` and publishes its manifest. */
 export function createRemoteConfig({
   name,
   port,
