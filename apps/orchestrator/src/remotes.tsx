@@ -1,6 +1,7 @@
-import type { RemoteAppModule, RemoteAppProps } from "@hub/shared";
 import { loadRemote, registerRemotes } from "@module-federation/runtime";
 import { lazy, type ComponentType, type LazyExoticComponent } from "react";
+
+import type { RemoteAppModule, RemoteAppProps } from "@hub/shared";
 
 export interface RemoteDefinition {
   appId: string;

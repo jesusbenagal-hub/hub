@@ -17,6 +17,11 @@
     "@eslint/js": "catalog:",
     "@module-federation/vite": "catalog:",
     "@vitejs/plugin-react": "catalog:",
+    "eslint-import-resolver-typescript": "catalog:",
+    "eslint-plugin-check-file": "catalog:",
+    "eslint-plugin-import-x": "catalog:",
+    "eslint-plugin-jsx-a11y-x": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
     "typescript-eslint": "catalog:"
   },
   "peerDependencies": {

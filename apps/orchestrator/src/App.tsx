@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Link, NavLink, Outlet, Route, Routes } from "react-router";
+
 import { RemoteErrorBoundary } from "./RemoteErrorBoundary";
 import type { LoadedRemote } from "./remotes";
 

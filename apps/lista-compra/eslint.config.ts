@@ -1,3 +1,3 @@
-import { baseConfig } from "@hub/config/eslint";
+import { reactConfig } from "@hub/config/eslint";
 
-export default baseConfig;
+export default reactConfig;

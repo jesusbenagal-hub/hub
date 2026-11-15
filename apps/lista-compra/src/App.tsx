@@ -1,4 +1,5 @@
 import { NavLink, Route, Routes } from "react-router";
+
 import { Historial } from "./Historial";
 import { Lista } from "./Lista";
 
