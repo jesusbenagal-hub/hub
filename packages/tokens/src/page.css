@@ -27,37 +27,18 @@
     color-scheme: dark;
   }
 
-  /* Accent palette: blue ink (the hub) is the default. */
-  :root,
-  [data-accent="blue"] {
-    --accent: light-dark(oklch(52.5% 0.1 262), oklch(66% 0.09 262));
-    --accent-soft: light-dark(oklch(95% 0.025 262), oklch(28% 0.035 262));
-  }
-
-  [data-accent="sage"] {
-    --accent: light-dark(oklch(52% 0.075 150), oklch(65.5% 0.068 150));
-    --accent-soft: light-dark(oklch(95% 0.025 150), oklch(28% 0.035 150));
-  }
-
-  [data-accent="mustard"] {
-    --accent: light-dark(oklch(53% 0.1 80), oklch(66% 0.09 80));
-    --accent-soft: light-dark(oklch(95% 0.025 80), oklch(28% 0.035 80));
-  }
-
-  [data-accent="plum"] {
-    --accent: light-dark(oklch(53.5% 0.09 330), oklch(66.5% 0.081 330));
-    --accent-soft: light-dark(oklch(95% 0.025 330), oklch(28% 0.035 330));
-  }
-
-  [data-accent="teal"] {
-    --accent: light-dark(oklch(52% 0.075 195), oklch(65.5% 0.068 195));
-    --accent-soft: light-dark(oklch(95% 0.025 195), oklch(28% 0.035 195));
+  /* Default line and focus colors, as shadcn/ui components expect. */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklab, var(--color-ring) 50%, transparent);
   }
 
   /* Page defaults. */
   html {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 
   body {

@@ -9,7 +9,7 @@ interface HubLayoutProps {
 export function HubLayout({ remotes }: HubLayoutProps) {
   return (
     <>
-      <header className="border-b border-line px-6 py-3">
+      <header className="border-b px-6 py-3">
         <nav aria-label="Apps del hub">
           <ul className="flex gap-6">
             <li>
@@ -21,7 +21,7 @@ export function HubLayout({ remotes }: HubLayoutProps) {
               <li key={definition.appId} data-accent={definition.accent}>
                 <NavLink
                   to={definition.route}
-                  className="text-ink-muted aria-[current=page]:text-ink aria-[current=page]:underline aria-[current=page]:decoration-accent aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4"
+                  className="text-muted-foreground aria-[current=page]:text-foreground aria-[current=page]:underline aria-[current=page]:decoration-primary aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4"
                 >
                   {definition.title}
                 </NavLink>
