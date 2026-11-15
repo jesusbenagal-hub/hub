@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-mira",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "../tokens/src/theme.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "iconLibrary": "phosphor",
+  "aliases": {
+    "components": "@hub/ui/components",
+    "ui": "@hub/ui/components",
+    "utils": "@hub/ui/lib/utils",
+    "lib": "@hub/ui/lib",
+    "hooks": "@hub/ui/hooks"
+  }
+}

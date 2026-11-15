@@ -6,6 +6,7 @@
   "exports": {
     "./tsconfig/base.json": "./tsconfig/base.json",
     "./tsconfig/react-app.json": "./tsconfig/react-app.json",
+    "./tsconfig/react-library.json": "./tsconfig/react-library.json",
     "./vite": "./src/vite.ts",
     "./eslint": "./src/eslint.ts",
     "./vitest": "./src/vitest.ts"

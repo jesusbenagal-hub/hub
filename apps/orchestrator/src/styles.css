@@ -1,4 +1,6 @@
 /* The host owns the page: preflight, token variables, fonts and defaults. */
 @import "@hub/tokens/page.css";
-/* Utilities for the host's own code. */
+/* Utilities for the host's own code… */
 @import "tailwindcss/utilities.css" layer(utilities);
+/* …and for the @hub/ui components it renders. */
+@import "@hub/ui/sources.css";

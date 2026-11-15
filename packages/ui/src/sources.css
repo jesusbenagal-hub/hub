@@ -1,0 +1,2 @@
+/* Lets an app's Tailwind generate the classes these components use. */
+@source "./components";

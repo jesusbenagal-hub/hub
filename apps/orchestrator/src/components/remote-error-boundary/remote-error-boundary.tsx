@@ -1,4 +1,7 @@
+import { ArrowClockwiseIcon } from "@phosphor-icons/react";
 import { Component, type ErrorInfo, type ReactNode } from "react";
+
+import { Button } from "@hub/ui/components/button";
 
 interface RemoteErrorBoundaryProps {
   title: string;
@@ -30,16 +33,17 @@ export class RemoteErrorBoundary extends Component<
   override render() {
     if (this.state.hasError) {
       return (
-        <div role="alert">
+        <div role="alert" className="flex flex-col items-start gap-2">
           <p>«{this.props.title}» ha tenido un problema.</p>
-          <button
-            type="button"
+          <Button
+            variant="outline"
             onClick={() => {
               this.setState({ hasError: false });
             }}
           >
+            <ArrowClockwiseIcon aria-hidden="true" data-icon="inline-start" />
             Reintentar
-          </button>
+          </Button>
         </div>
       );
     }
