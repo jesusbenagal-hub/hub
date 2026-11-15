@@ -1,9 +1,6 @@
 import type { ComponentType } from "react";
 
-/**
- * Props que el host pasa al `App` de cada remote.
- * En la Fase 2 se añadirán `user` y `role`.
- */
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type -- TODO(phase-2): add user and role
 export interface RemoteAppProps {}
 
 /** Forma que debe tener el módulo `./App` que expone cada remote. */

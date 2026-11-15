@@ -21,8 +21,9 @@ function isRemoteDefinition(value: unknown): value is RemoteDefinition {
   if (typeof value !== "object" || value === null) {
     return false;
   }
-  const record = value as Record<string, unknown>;
-  return REQUIRED_FIELDS.every((field) => typeof record[field] === "string");
+  return REQUIRED_FIELDS.every(
+    (field) => typeof Reflect.get(value, field) === "string",
+  );
 }
 
 async function fetchRemoteDefinitions(): Promise<RemoteDefinition[]> {

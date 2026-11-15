@@ -6,19 +6,27 @@
   "exports": {
     "./tsconfig/base.json": "./tsconfig/base.json",
     "./tsconfig/react-app.json": "./tsconfig/react-app.json",
-    "./vite": "./src/vite.ts"
+    "./vite": "./src/vite.ts",
+    "./eslint": "./src/eslint.ts"
   },
   "scripts": {
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint ."
   },
   "dependencies": {
+    "@eslint/js": "catalog:",
     "@module-federation/vite": "catalog:",
-    "@vitejs/plugin-react": "catalog:"
+    "@vitejs/plugin-react": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "peerDependencies": {
+    "eslint": "catalog:",
     "vite": "catalog:"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "jiti": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"
   }

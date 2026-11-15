@@ -34,7 +34,9 @@ export class RemoteErrorBoundary extends Component<
           <p>«{this.props.title}» ha tenido un problema.</p>
           <button
             type="button"
-            onClick={() => this.setState({ hasError: false })}
+            onClick={() => {
+              this.setState({ hasError: false });
+            }}
           >
             Reintentar
           </button>

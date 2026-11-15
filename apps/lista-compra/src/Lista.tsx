@@ -26,7 +26,9 @@ export function Lista() {
               <input
                 type="checkbox"
                 checked={comprados.has(producto)}
-                onChange={() => alternar(producto)}
+                onChange={() => {
+                  alternar(producto);
+                }}
               />
               {producto}
             </label>
