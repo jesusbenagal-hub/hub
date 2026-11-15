@@ -13,9 +13,17 @@ export function HomePage({ remotes }: HomePageProps) {
       {remotes.length === 0 ? (
         <p>No hay ninguna app disponible.</p>
       ) : (
-        <ul>
+        <ul className="mt-3 flex flex-col gap-2">
           {remotes.map(({ definition }) => (
-            <li key={definition.appId}>
+            <li
+              key={definition.appId}
+              data-accent={definition.accent}
+              className="flex items-center gap-2"
+            >
+              <span
+                aria-hidden="true"
+                className="size-2 rounded-full bg-accent"
+              />
               <Link to={definition.route}>{definition.title}</Link>
             </li>
           ))}

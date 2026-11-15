@@ -10,10 +10,13 @@ interface RemotePageProps {
 export function RemotePage({ remote }: RemotePageProps) {
   const { definition, Component } = remote;
   return (
-    <RemoteErrorBoundary key={definition.appId} title={definition.title}>
-      <Suspense fallback={<p>Cargando «{definition.title}»…</p>}>
-        <Component />
-      </Suspense>
-    </RemoteErrorBoundary>
+    // The app's accent reaches everything inside, the remote included.
+    <div data-accent={definition.accent}>
+      <RemoteErrorBoundary key={definition.appId} title={definition.title}>
+        <Suspense fallback={<p>Cargando «{definition.title}»…</p>}>
+          <Component />
+        </Suspense>
+      </RemoteErrorBoundary>
+    </div>
   );
 }
