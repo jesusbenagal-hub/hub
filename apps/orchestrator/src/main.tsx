@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router";
 
 import { App } from "./app";
 import { setupRemotes } from "./services/setup-remotes";
+import "./styles.css";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {

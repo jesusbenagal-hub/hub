@@ -1,4 +1,5 @@
 import { federation } from "@module-federation/vite";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type UserConfig } from "vite";
 
@@ -23,11 +24,15 @@ function serverOptions(port: number) {
   };
 }
 
-/** Vite config for the orchestrator, the Module Federation host. */
+/**
+ * Vite config for the orchestrator, the Module Federation host. It also
+ * compiles Tailwind CSS: the host is the one that loads the base styles.
+ */
 export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
   return defineConfig({
     plugins: [
       react(),
+      tailwindcss(),
       federation({
         name,
         shared: sharedDependencies,
@@ -37,7 +42,6 @@ export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
     ...serverOptions(port),
   });
 }
-
 /** Vite config for a remote: exposes `./App` and publishes its manifest. */
 export function createRemoteConfig({
   name,

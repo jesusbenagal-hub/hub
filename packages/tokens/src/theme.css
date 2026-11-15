@@ -1,0 +1,122 @@
+/*
+ * Hub design tokens: the color palette ("notebook and blue ink").
+ *
+ * Each color holds its light and dark value in light-dark(): the browser
+ * picks one from the element's color-scheme, so there is a single list of
+ * tokens and no duplicated dark-mode block. Every pair meets WCAG AA:
+ * ink >= 13:1, ink-muted >= 5.5:1, line-strong >= 3:1 on paper and surface,
+ * and solid colors >= 4.6:1 both as text and behind on-solid text.
+ */
+
+/* Follow the system by default; data-theme on <html> forces a mode. */
+:root {
+  color-scheme: light dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@theme {
+  /* Drop Tailwind's default palette: only our colors exist (no bg-red-500). */
+  --color-*: initial;
+
+  /* Base */
+  --color-paper: light-dark(oklch(97.5% 0.006 110), oklch(20% 0.022 262));
+  --color-surface: light-dark(oklch(99.5% 0.002 110), oklch(24.5% 0.024 262));
+  --color-ink: light-dark(oklch(27% 0.045 262), oklch(93% 0.01 110));
+  --color-ink-muted: light-dark(oklch(50% 0.03 255), oklch(72% 0.02 250));
+  --color-line: light-dark(oklch(90% 0.02 240), oklch(31% 0.03 255));
+  --color-line-strong: light-dark(oklch(63% 0.04 245), oklch(55% 0.04 250));
+  /* Text on any solid color (accent or status). */
+  --color-on-solid: light-dark(oklch(99.5% 0.002 110), oklch(20% 0.022 262));
+
+  /* Status: solid for text, icons and fills; soft for backgrounds. */
+  --color-success: light-dark(oklch(51.5% 0.11 148), oklch(65% 0.099 148));
+  --color-success-soft: light-dark(oklch(95% 0.035 148), oklch(28% 0.045 148));
+  --color-warning: light-dark(oklch(53% 0.11 70), oklch(66% 0.108 70));
+  --color-warning-soft: light-dark(oklch(95% 0.035 70), oklch(28% 0.045 70));
+  --color-danger: light-dark(oklch(53.5% 0.14 27), oklch(67% 0.126 27));
+  --color-danger-soft: light-dark(oklch(95% 0.035 27), oklch(28% 0.045 27));
+  --color-info: light-dark(oklch(52.5% 0.1 245), oklch(65.5% 0.09 245));
+  --color-info-soft: light-dark(oklch(95% 0.035 245), oklch(28% 0.045 245));
+}
+
+@theme {
+  /* Typography: IBM Plex (the files are in fonts.css). */
+  --font-*: initial;
+  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Only the weights we design with. */
+  --font-weight-*: initial;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Short type scale; 15px body text for a dense, daily-use tool. */
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 2.25rem;
+
+  /* 4px grid: every spacing utility is a multiple (p-3 = 12px). */
+  --spacing: 0.25rem;
+
+  /* Small radii only. */
+  --radius-*: initial;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+
+  /* 1px borders instead of shadows. */
+  --shadow-*: initial;
+}
+
+/*
+ * Accent of the current app. "inline" makes utilities read var(--accent)
+ * where they are used, so a data-accent attribute recolors its subtree.
+ */
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+/* Accent palette: blue ink (the hub) is the default. */
+:root,
+[data-accent="blue"] {
+  --accent: light-dark(oklch(52.5% 0.1 262), oklch(66% 0.09 262));
+  --accent-soft: light-dark(oklch(95% 0.025 262), oklch(28% 0.035 262));
+}
+
+[data-accent="sage"] {
+  --accent: light-dark(oklch(52% 0.075 150), oklch(65.5% 0.068 150));
+  --accent-soft: light-dark(oklch(95% 0.025 150), oklch(28% 0.035 150));
+}
+
+[data-accent="mustard"] {
+  --accent: light-dark(oklch(53% 0.1 80), oklch(66% 0.09 80));
+  --accent-soft: light-dark(oklch(95% 0.025 80), oklch(28% 0.035 80));
+}
+
+[data-accent="plum"] {
+  --accent: light-dark(oklch(53.5% 0.09 330), oklch(66.5% 0.081 330));
+  --accent-soft: light-dark(oklch(95% 0.025 330), oklch(28% 0.035 330));
+}
+
+[data-accent="teal"] {
+  --accent: light-dark(oklch(52% 0.075 195), oklch(65.5% 0.068 195));
+  --accent-soft: light-dark(oklch(95% 0.025 195), oklch(28% 0.035 195));
+}

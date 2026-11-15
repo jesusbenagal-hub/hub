@@ -23,7 +23,8 @@
     "eslint-plugin-import-x": "catalog:",
     "eslint-plugin-jsx-a11y-x": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
-    "typescript-eslint": "catalog:"
+    "typescript-eslint": "catalog:",
+    "@tailwindcss/vite": "catalog:"
   },
   "peerDependencies": {
     "eslint": "catalog:",

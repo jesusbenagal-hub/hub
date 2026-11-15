@@ -1,0 +1,17 @@
+{
+  "name": "@hub/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./theme.css": "./src/theme.css",
+    "./fonts.css": "./src/fonts.css"
+  },
+  "dependencies": {
+    "@fontsource-variable/ibm-plex-sans": "catalog:",
+    "@fontsource/ibm-plex-mono": "catalog:"
+  },
+  "peerDependencies": {
+    "tailwindcss": "catalog:"
+  }
+}

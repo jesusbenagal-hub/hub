@@ -1,0 +1,6 @@
+/*
+ * Font files, installed from npm (Fontsource) and served from our own origin.
+ * @font-face is global, so only the host loads this file.
+ */
+@import "@fontsource-variable/ibm-plex-sans/wght.css";
+@import "@fontsource/ibm-plex-mono/400.css";

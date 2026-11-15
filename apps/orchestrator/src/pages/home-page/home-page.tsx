@@ -9,7 +9,7 @@ interface HomePageProps {
 export function HomePage({ remotes }: HomePageProps) {
   return (
     <>
-      <h1>Hub</h1>
+      <h1 className="text-xl font-semibold">Hub</h1>
       {remotes.length === 0 ? (
         <p>No hay ninguna app disponible.</p>
       ) : (

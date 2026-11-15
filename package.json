@@ -34,6 +34,7 @@
     "lint-staged": "catalog:",
     "prettier": "catalog:",
     "turbo": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:"
   }
 }
