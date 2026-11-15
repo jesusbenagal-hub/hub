@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {
     "./theme.css": "./src/theme.css",
-    "./fonts.css": "./src/fonts.css"
+    "./page.css": "./src/page.css"
   },
   "dependencies": {
     "@fontsource-variable/ibm-plex-sans": "catalog:",

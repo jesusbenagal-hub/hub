@@ -1,0 +1,67 @@
+/*
+ * What the owner of the page loads once: the host in the hub, or a remote
+ * running standalone. Inside the hub, remotes load only their utilities.
+ */
+@layer theme, base, components, utilities;
+
+/*
+ * Every token as a CSS variable, also those this app does not use ("static"),
+ * because the remotes' utilities read them from the page.
+ */
+@import "tailwindcss/theme.css" layer(theme) theme(static);
+@import "./theme.css" theme(static);
+@import "tailwindcss/preflight.css" layer(base);
+@import "./fonts.css";
+
+@layer base {
+  /* Follow the system by default; data-theme on <html> forces a mode. */
+  :root {
+    color-scheme: light dark;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  /* Accent palette: blue ink (the hub) is the default. */
+  :root,
+  [data-accent="blue"] {
+    --accent: light-dark(oklch(52.5% 0.1 262), oklch(66% 0.09 262));
+    --accent-soft: light-dark(oklch(95% 0.025 262), oklch(28% 0.035 262));
+  }
+
+  [data-accent="sage"] {
+    --accent: light-dark(oklch(52% 0.075 150), oklch(65.5% 0.068 150));
+    --accent-soft: light-dark(oklch(95% 0.025 150), oklch(28% 0.035 150));
+  }
+
+  [data-accent="mustard"] {
+    --accent: light-dark(oklch(53% 0.1 80), oklch(66% 0.09 80));
+    --accent-soft: light-dark(oklch(95% 0.025 80), oklch(28% 0.035 80));
+  }
+
+  [data-accent="plum"] {
+    --accent: light-dark(oklch(53.5% 0.09 330), oklch(66.5% 0.081 330));
+    --accent-soft: light-dark(oklch(95% 0.025 330), oklch(28% 0.035 330));
+  }
+
+  [data-accent="teal"] {
+    --accent: light-dark(oklch(52% 0.075 195), oklch(65.5% 0.068 195));
+    --accent-soft: light-dark(oklch(95% 0.025 195), oklch(28% 0.035 195));
+  }
+
+  /* Page defaults. */
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+  }
+}

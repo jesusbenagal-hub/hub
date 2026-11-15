@@ -4,6 +4,8 @@ import { BrowserRouter } from "react-router";
 
 import { App } from "./app";
 
+import "./standalone.css";
+
 const rootElement = document.getElementById("root");
 if (!rootElement) {
   throw new Error("Missing #root element in index.html");

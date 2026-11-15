@@ -325,6 +325,9 @@ importers:
       '@hub/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      '@hub/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
       react:
         specifier: 'catalog:'
         version: 19.3.1
@@ -365,6 +368,9 @@ importers:
       jsdom:
         specifier: 'catalog:'
         version: 31.0.1
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.5
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

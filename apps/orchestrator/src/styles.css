@@ -1,19 +1,4 @@
-/* Tailwind's base styles (preflight), theme variables and utilities. */
-@import "tailwindcss";
-/* Our tokens replace Tailwind's colors, fonts, type scale and radii. */
-@import "@hub/tokens/theme.css";
-/* Font files: global, so only the host loads them. */
-@import "@hub/tokens/fonts.css";
-
-/* Page defaults. Only the host sets base styles (remotes bring utilities). */
-@layer base {
-  html {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-  }
-
-  body {
-    font-size: var(--text-base);
-    line-height: var(--text-base--line-height);
-  }
-}
+/* The host owns the page: preflight, token variables, fonts and defaults. */
+@import "@hub/tokens/page.css";
+/* Utilities for the host's own code. */
+@import "tailwindcss/utilities.css" layer(utilities);

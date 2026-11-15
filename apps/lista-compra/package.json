@@ -15,7 +15,8 @@
     "@hub/shared": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-router": "catalog:"
+    "react-router": "catalog:",
+    "@hub/tokens": "workspace:*"
   },
   "devDependencies": {
     "@hub/config": "workspace:*",
@@ -30,6 +31,7 @@
     "@testing-library/react": "catalog:",
     "@testing-library/user-event": "catalog:",
     "jsdom": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "tailwindcss": "catalog:"
   }
 }

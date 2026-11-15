@@ -30,7 +30,7 @@ export function HubLayout({ remotes }: HubLayoutProps) {
           </ul>
         </nav>
       </header>
-      <main className="px-6 py-4">
+      <main className="px-4 py-4 sm:px-6">
         <Outlet />
       </main>
     </>

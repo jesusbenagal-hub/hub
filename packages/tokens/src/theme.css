@@ -1,25 +1,13 @@
 /*
- * Hub design tokens: the color palette ("notebook and blue ink").
+ * Hub design tokens for Tailwind: colors, typography, spacing and radii.
  *
  * Each color holds its light and dark value in light-dark(): the browser
- * picks one from the element's color-scheme, so there is a single list of
- * tokens and no duplicated dark-mode block. Every pair meets WCAG AA:
- * ink >= 13:1, ink-muted >= 5.5:1, line-strong >= 3:1 on paper and surface,
- * and solid colors >= 4.6:1 both as text and behind on-solid text.
+ * picks one from the element's color-scheme (set in page.css), so there is
+ * a single list of tokens and no duplicated dark-mode block.
+ * Every pair meets WCAG AA: ink >= 13:1, ink-muted >= 5.5:1 and
+ * line-strong >= 3:1 on paper and surface, and solid colors >= 4.6:1 both
+ * as text and behind on-solid text.
  */
-
-/* Follow the system by default; data-theme on <html> forces a mode. */
-:root {
-  color-scheme: light dark;
-}
-
-[data-theme="light"] {
-  color-scheme: light;
-}
-
-[data-theme="dark"] {
-  color-scheme: dark;
-}
 
 @theme {
   /* Drop Tailwind's default palette: only our colors exist (no bg-red-500). */
@@ -92,31 +80,4 @@
 @theme inline {
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
-}
-
-/* Accent palette: blue ink (the hub) is the default. */
-:root,
-[data-accent="blue"] {
-  --accent: light-dark(oklch(52.5% 0.1 262), oklch(66% 0.09 262));
-  --accent-soft: light-dark(oklch(95% 0.025 262), oklch(28% 0.035 262));
-}
-
-[data-accent="sage"] {
-  --accent: light-dark(oklch(52% 0.075 150), oklch(65.5% 0.068 150));
-  --accent-soft: light-dark(oklch(95% 0.025 150), oklch(28% 0.035 150));
-}
-
-[data-accent="mustard"] {
-  --accent: light-dark(oklch(53% 0.1 80), oklch(66% 0.09 80));
-  --accent-soft: light-dark(oklch(95% 0.025 80), oklch(28% 0.035 80));
-}
-
-[data-accent="plum"] {
-  --accent: light-dark(oklch(53.5% 0.09 330), oklch(66.5% 0.081 330));
-  --accent-soft: light-dark(oklch(95% 0.025 330), oklch(28% 0.035 330));
-}
-
-[data-accent="teal"] {
-  --accent: light-dark(oklch(52% 0.075 195), oklch(65.5% 0.068 195));
-  --accent-soft: light-dark(oklch(95% 0.025 195), oklch(28% 0.035 195));
 }

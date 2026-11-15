@@ -51,6 +51,7 @@ export function createRemoteConfig({
   return defineConfig({
     plugins: [
       react(),
+      tailwindcss(),
       federation({
         name,
         filename: "remoteEntry.js",
