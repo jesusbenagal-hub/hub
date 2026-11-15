@@ -7,7 +7,8 @@
     "./tsconfig/base.json": "./tsconfig/base.json",
     "./tsconfig/react-app.json": "./tsconfig/react-app.json",
     "./vite": "./src/vite.ts",
-    "./eslint": "./src/eslint.ts"
+    "./eslint": "./src/eslint.ts",
+    "./vitest": "./src/vitest.ts"
   },
   "scripts": {
     "typecheck": "tsc",
@@ -26,13 +27,15 @@
   },
   "peerDependencies": {
     "eslint": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vitest": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "jiti": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vitest": "catalog:"
   }
 }
