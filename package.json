@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devEngines": {
     "runtime": {
@@ -20,6 +22,7 @@
     }
   },
   "devDependencies": {
+    "prettier": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:"
   }
