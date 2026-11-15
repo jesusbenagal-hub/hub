@@ -18,7 +18,7 @@ export function HubLayout({ remotes }: HubLayoutProps) {
               </NavLink>
             </li>
             {remotes.map(({ definition }) => (
-              <li key={definition.appId}>
+              <li key={definition.appId} data-accent={definition.accent}>
                 <NavLink
                   to={definition.route}
                   className="text-ink-muted aria-[current=page]:text-ink aria-[current=page]:underline aria-[current=page]:decoration-accent aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4"

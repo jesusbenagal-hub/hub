@@ -4,6 +4,7 @@
     "mfName": "lista_compra",
     "entry": "http://localhost:5174/mf-manifest.json",
     "route": "/lista-compra",
-    "title": "Lista de la compra"
+    "title": "Lista de la compra",
+    "accent": "sage"
   }
 ]
