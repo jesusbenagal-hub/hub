@@ -21,7 +21,7 @@ export class RemoteErrorBoundary extends Component<
 
   override componentDidCatch(error: Error, info: ErrorInfo) {
     console.error(
-      `«${this.props.title}» ha fallado al pintarse`,
+      `Remote "${this.props.title}" failed to render`,
       error,
       info.componentStack,
     );
