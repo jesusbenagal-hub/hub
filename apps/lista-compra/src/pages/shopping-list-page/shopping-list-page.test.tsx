@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
@@ -100,5 +100,30 @@ describe("ShoppingListPage", () => {
 
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     expect(input).toBeValid();
+  });
+
+  it("deletes an item after confirming", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+
+    await user.click(screen.getByRole("button", { name: "Borrar «Leche»" }));
+    const dialog = screen.getByRole("alertdialog", { name: "¿Lo borro?" });
+    await user.click(within(dialog).getByRole("button", { name: "Borrar" }));
+
+    expect(
+      screen.queryByRole("checkbox", { name: "Leche" }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("0 de 2 en el carro")).toBeInTheDocument();
+  });
+
+  it("keeps the item when the deletion is cancelled", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+
+    await user.click(screen.getByRole("button", { name: "Borrar «Leche»" }));
+    await user.click(screen.getByRole("button", { name: "Cancelar" }));
+
+    expect(screen.queryByRole("alertdialog")).not.toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "Leche" })).toBeInTheDocument();
   });
 });

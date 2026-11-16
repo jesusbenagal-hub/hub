@@ -12,6 +12,9 @@
  * behind their -foreground text.
  */
 
+/* Enter and exit animations used by shadcn/ui overlays (data-open:animate-in…). */
+@import "tw-animate-css";
+
 @theme {
   /* Drop Tailwind's default palette: only our colors exist (no bg-red-500). */
   --color-*: initial;

@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@fontsource-variable/ibm-plex-sans": "catalog:",
-    "@fontsource/ibm-plex-mono": "catalog:"
+    "@fontsource/ibm-plex-mono": "catalog:",
+    "tw-animate-css": "catalog:"
   },
   "peerDependencies": {
     "tailwindcss": "catalog:"

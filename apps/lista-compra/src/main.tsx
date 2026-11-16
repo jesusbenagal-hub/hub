@@ -2,12 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
-import { Accent } from "@hub/shared";
-
 import { App } from "./app";
-
-// In the hub, the host sets the accent from remotes.json.
-document.documentElement.dataset.accent = Accent.Sage;
+import "./standalone.css";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {

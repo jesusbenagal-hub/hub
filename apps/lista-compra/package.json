@@ -17,7 +17,8 @@
     "react-dom": "catalog:",
     "react-router": "catalog:",
     "@hub/tokens": "workspace:*",
-    "@hub/ui": "workspace:*"
+    "@hub/ui": "workspace:*",
+    "@phosphor-icons/react": "catalog:"
   },
   "devDependencies": {
     "@hub/config": "workspace:*",

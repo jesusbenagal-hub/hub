@@ -1,0 +1,2 @@
+/* Standalone only: this app owns the page, so it loads what the host loads. */
+@import "@hub/tokens/page.css";

@@ -28,6 +28,12 @@ export function ShoppingListPage() {
             onToggle={() => {
               togglePurchased(item);
             }}
+            onDelete={() => {
+              if (purchasedItems.has(item)) {
+                togglePurchased(item);
+              }
+              setItems((previous) => previous.filter((name) => name !== item));
+            }}
           />
         ))}
       </ul>

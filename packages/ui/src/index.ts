@@ -3,6 +3,20 @@
  * so Module Federation shares one copy of the whole library (and of Base UI
  * inside it). Add a line here for every component the shadcn CLI adds.
  */
+export {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./components/alert-dialog";
 export { Button, buttonVariants } from "./components/button";
 export { Checkbox } from "./components/checkbox";
 export {
@@ -19,4 +33,8 @@ export {
 } from "./components/field";
 export { Input } from "./components/input";
 export { Label } from "./components/label";
+export {
+  PortalContainerProvider,
+  usePortalContainer,
+} from "./components/portal-container";
 export { Separator } from "./components/separator";
