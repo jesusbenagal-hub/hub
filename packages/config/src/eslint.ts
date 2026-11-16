@@ -171,7 +171,7 @@ export const reactConfig = defineConfig(baseConfig, {
     "jsx-a11y-x/label-has-associated-control": [
       "error",
       {
-        labelComponents: ["Label"],
+        labelComponents: ["Label", "FieldLabel"],
         controlComponents: ["Checkbox", "Input"],
         assert: "either",
       },

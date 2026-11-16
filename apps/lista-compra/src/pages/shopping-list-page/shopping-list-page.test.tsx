@@ -42,4 +42,63 @@ describe("ShoppingListPage", () => {
 
     expect(screen.getByRole("checkbox", { name: "Pan" })).toBeChecked();
   });
+
+  it("adds the item typed in the form", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+    const input = screen.getByRole("textbox", { name: "Producto" });
+
+    await user.type(input, "Café");
+    await user.click(screen.getByRole("button", { name: "Añadir" }));
+
+    expect(screen.getByRole("checkbox", { name: "Café" })).not.toBeChecked();
+    expect(screen.getByText("0 de 4 en el carro")).toBeInTheDocument();
+    expect(input).toHaveValue("");
+  });
+
+  it("adds the item when Enter is pressed", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+
+    await user.type(
+      screen.getByRole("textbox", { name: "Producto" }),
+      "Café{Enter}",
+    );
+
+    expect(screen.getByRole("checkbox", { name: "Café" })).toBeInTheDocument();
+  });
+
+  it("explains why an empty name is not added", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+    const input = screen.getByRole("textbox", { name: "Producto" });
+
+    await user.click(screen.getByRole("button", { name: "Añadir" }));
+
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      "Escribe el nombre del producto.",
+    );
+    expect(input).toBeInvalid();
+    expect(input).toHaveAccessibleDescription(
+      "Escribe un producto y pulsa «Añadir». Escribe el nombre del producto.",
+    );
+    expect(screen.getAllByRole("checkbox")).toHaveLength(3);
+  });
+
+  it("clears the error once a valid item is added", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+    const input = screen.getByRole("textbox", { name: "Producto" });
+
+    await user.type(input, "Pan{Enter}");
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      "«Pan» ya está en la lista.",
+    );
+
+    await user.clear(input);
+    await user.type(input, "Café{Enter}");
+
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(input).toBeValid();
+  });
 });

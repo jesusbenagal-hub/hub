@@ -2,20 +2,13 @@ import { defineConfig } from "eslint/config";
 
 import { reactConfig } from "@hub/config/eslint";
 
-export default defineConfig(
-  reactConfig,
-  {
+export default defineConfig(reactConfig, {
+  files: ["src/**/*.tsx"],
+  rules: {
     // Inside the library, components import each other by path (shadcn CLI).
-    files: ["src/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": "off",
-    },
+    "no-restricted-imports": "off",
+    // Label and FieldLabel are generic wrappers: whoever uses them passes the
+    // control or htmlFor, and the apps' lint checks those uses.
+    "jsx-a11y-x/label-has-associated-control": "off",
   },
-  {
-    // Label is a generic wrapper: whoever uses it passes the control or htmlFor.
-    files: ["src/components/label.tsx"],
-    rules: {
-      "jsx-a11y-x/label-has-associated-control": "off",
-    },
-  },
-);
+});
