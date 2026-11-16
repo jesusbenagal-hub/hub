@@ -126,4 +126,22 @@ describe("ShoppingListPage", () => {
     expect(screen.queryByRole("alertdialog")).not.toBeInTheDocument();
     expect(screen.getByRole("checkbox", { name: "Leche" })).toBeInTheDocument();
   });
+
+  it("shows only the pending items when asked to", async () => {
+    const user = userEvent.setup();
+    render(<ShoppingListPage />);
+
+    await user.click(screen.getByRole("checkbox", { name: "Leche" }));
+    await user.click(screen.getByRole("combobox", { name: "Mostrar" }));
+    await user.click(screen.getByRole("option", { name: "Pendientes" }));
+
+    expect(screen.getByRole("combobox", { name: "Mostrar" })).toHaveTextContent(
+      "Pendientes",
+    );
+    expect(
+      screen.queryByRole("checkbox", { name: "Leche" }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "Pan" })).toBeInTheDocument();
+    expect(screen.getByText("1 de 3 en el carro")).toBeInTheDocument();
+  });
 });

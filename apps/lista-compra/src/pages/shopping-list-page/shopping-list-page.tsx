@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 import { AddItemForm } from "../../components/add-item-form/add-item-form";
+import { ItemFilterSelect } from "../../components/item-filter-select/item-filter-select";
 import { ItemRow } from "../../components/item-row/item-row";
 import { useToggleSet } from "../../hooks/use-toggle-set";
+import { ItemFilter } from "../../types/item-filter";
 
 // TODO(phase-3): load the items from lista-compra-api.
 const sampleItems = ["Leche", "Pan", "Huevos"];
@@ -10,6 +12,17 @@ const sampleItems = ["Leche", "Pan", "Huevos"];
 export function ShoppingListPage() {
   const [items, setItems] = useState<readonly string[]>(sampleItems);
   const [purchasedItems, togglePurchased] = useToggleSet<string>();
+  const [filter, setFilter] = useState<ItemFilter>(ItemFilter.All);
+  const visibleItems = items.filter((item) => {
+    switch (filter) {
+      case ItemFilter.Pending:
+        return !purchasedItems.has(item);
+      case ItemFilter.Purchased:
+        return purchasedItems.has(item);
+      case ItemFilter.All:
+        return true;
+    }
+  });
 
   return (
     <>
@@ -19,8 +32,9 @@ export function ShoppingListPage() {
           setItems((previous) => [...previous, name]);
         }}
       />
+      <ItemFilterSelect value={filter} onChange={setFilter} />
       <ul>
-        {items.map((item) => (
+        {visibleItems.map((item) => (
           <ItemRow
             key={item}
             name={item}

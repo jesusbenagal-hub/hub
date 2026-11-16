@@ -37,4 +37,16 @@ export {
   PortalContainerProvider,
   usePortalContainer,
 } from "./components/portal-container";
+export {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "./components/select";
 export { Separator } from "./components/separator";

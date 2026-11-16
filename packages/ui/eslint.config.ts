@@ -10,5 +10,7 @@ export default defineConfig(reactConfig, {
     // Label and FieldLabel are generic wrappers: whoever uses them passes the
     // control or htmlFor, and the apps' lint checks those uses.
     "jsx-a11y-x/label-has-associated-control": "off",
+    // Prop names follow Base UI's API (alignItemWithTrigger), not our prefixes.
+    "@typescript-eslint/naming-convention": "off",
   },
 });
