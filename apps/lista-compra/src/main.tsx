@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
+import { Toaster } from "@hub/ui";
+
 import { App } from "./app";
 import "./standalone.css";
 
@@ -14,6 +16,7 @@ createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
       <App />
+      <Toaster />
     </BrowserRouter>
   </StrictMode>,
 );

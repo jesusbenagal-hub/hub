@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { toast } from "@hub/ui";
+
 import { AddItemForm } from "../../components/add-item-form/add-item-form";
 import { ItemFilterSelect } from "../../components/item-filter-select/item-filter-select";
 import { ItemRow } from "../../components/item-row/item-row";
@@ -47,6 +49,10 @@ export function ShoppingListPage() {
                 togglePurchased(item);
               }
               setItems((previous) => previous.filter((name) => name !== item));
+              toast.add({
+                title: "Borrado",
+                description: `«${item}» ya no está en la lista.`,
+              });
             }}
           />
         ))}
