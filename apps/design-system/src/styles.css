@@ -1,0 +1,15 @@
+/*
+ * Utilities only, scoped to this app's subtree. The owner of the page (the
+ * host, or standalone.css) provides preflight, fonts and the token variables.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" reference;
+@import "@hub/tokens/theme.css" reference;
+/* The @hub/ui components this app renders get their classes here too. */
+@import "@hub/ui/sources.css";
+
+@layer utilities {
+  @scope ([data-app="design-system"]) {
+    @tailwind utilities;
+  }
+}

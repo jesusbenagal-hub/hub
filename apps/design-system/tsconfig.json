@@ -1,0 +1,7 @@
+{
+  "extends": "@hub/config/tsconfig/react-app.json",
+  "compilerOptions": {
+    "types": ["vite/client", "mdx"]
+  },
+  "include": ["src", "vite.config.ts", "vitest.config.ts"]
+}

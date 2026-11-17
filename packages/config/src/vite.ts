@@ -1,7 +1,7 @@
 import { federation } from "@module-federation/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig, type UserConfig } from "vite";
+import { defineConfig, type PluginOption, type UserConfig } from "vite";
 
 /** Dependencies the host and the remotes share as a single instance. */
 const sharedDependencies = {
@@ -15,6 +15,8 @@ interface AppConfigOptions {
   name: string;
   /** Fixed local port, with `strictPort`. */
   port: number;
+  /** Extra Vite plugins that run before React's (e.g. MDX). */
+  plugins?: PluginOption[];
 }
 
 function serverOptions(port: number) {
@@ -46,10 +48,12 @@ export function createHostConfig({ name, port }: AppConfigOptions): UserConfig {
 export function createRemoteConfig({
   name,
   port,
+  plugins = [],
 }: AppConfigOptions): UserConfig {
   const { server, preview } = serverOptions(port);
   return defineConfig({
     plugins: [
+      ...plugins,
       react(),
       tailwindcss(),
       federation({

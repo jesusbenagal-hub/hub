@@ -6,5 +6,12 @@
     "route": "/lista-compra",
     "title": "Lista de la compra",
     "accent": "sage"
+  },
+  {
+    "appId": "design-system",
+    "mfName": "design_system",
+    "entry": "http://localhost:5175/mf-manifest.json",
+    "route": "/design-system",
+    "title": "Design system"
   }
 ]

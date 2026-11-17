@@ -1,0 +1,5 @@
+/* Standalone only: this app owns the page, so it loads what the host loads. */
+@import "@hub/tokens/page.css";
+/* Like the host, style the @hub/ui parts rendered outside the app (toasts). */
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "@hub/ui/sources.css";
