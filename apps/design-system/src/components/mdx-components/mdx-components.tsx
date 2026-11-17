@@ -2,7 +2,26 @@ import type { MDXComponents } from "mdx/types";
 import type { ComponentProps } from "react";
 import { Link } from "react-router";
 
+import { useAppPath } from "@hub/shared";
+
 const linkClassName = "text-primary underline underline-offset-4";
+
+/** Links in MDX: outside ones as <a>, ours through the router (no reload). */
+function MdxLink({ href = "", children, ...props }: ComponentProps<"a">) {
+  const appPath = useAppPath();
+  if (/^https?:/.test(href)) {
+    return (
+      <a href={href} className={linkClassName} {...props}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link to={appPath(href)} className={linkClassName} {...props}>
+      {children}
+    </Link>
+  );
+}
 
 /** Styles for the plain HTML that MDX writes (preflight resets it all). */
 export const mdxComponents: MDXComponents = {
@@ -19,16 +38,7 @@ export const mdxComponents: MDXComponents = {
   p: (props) => <p className="mb-3" {...props} />,
   ul: (props) => <ul className="mb-3 list-disc pl-6" {...props} />,
   // Links inside the design system go through the router (no page reload).
-  a: ({ href = "", children, ...props }: ComponentProps<"a">) =>
-    /^https?:/.test(href) ? (
-      <a href={href} className={linkClassName} {...props}>
-        {children}
-      </a>
-    ) : (
-      <Link to={href} className={linkClassName} {...props}>
-        {children}
-      </Link>
-    ),
+  a: MdxLink,
   code: (props) => (
     <code className="rounded-sm bg-muted px-1 font-mono text-sm" {...props} />
   ),

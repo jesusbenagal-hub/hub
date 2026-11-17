@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 
 import { Toaster } from "@hub/ui";
 
@@ -15,7 +15,10 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      {/* Mounted like the host does, at a splat route. */}
+      <Routes>
+        <Route path="/*" element={<App />} />
+      </Routes>
       <Toaster />
     </BrowserRouter>
   </StrictMode>,

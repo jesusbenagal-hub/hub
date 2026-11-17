@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Route, Routes } from "react-router";
 
+import { useAppPath } from "@hub/shared";
 import { PortalContainerProvider } from "@hub/ui";
 
 import { mdxComponents } from "./components/mdx-components/mdx-components";
@@ -34,6 +35,7 @@ const navLinkClassName =
 export function App() {
   // Overlays render inside data-app, where this app's scoped styles apply.
   const [appElement, setAppElement] = useState<HTMLDivElement | null>(null);
+  const appPath = useAppPath();
 
   return (
     <div data-app="design-system" ref={setAppElement}>
@@ -42,13 +44,13 @@ export function App() {
           <nav aria-label="Design system">
             <ul className="flex gap-4 text-sm">
               <li>
-                <NavLink to="." end className={navLinkClassName}>
+                <NavLink to={appPath()} end className={navLinkClassName}>
                   Inicio
                 </NavLink>
               </li>
               {sections.map(({ path, title }) => (
                 <li key={path}>
-                  <NavLink to={path} className={navLinkClassName}>
+                  <NavLink to={appPath(path)} className={navLinkClassName}>
                     {title}
                   </NavLink>
                 </li>

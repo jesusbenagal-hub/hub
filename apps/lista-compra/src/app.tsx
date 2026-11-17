@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Route, Routes } from "react-router";
 
+import { useAppPath } from "@hub/shared";
 import { PortalContainerProvider } from "@hub/ui";
 
 import { HistoryPage } from "./pages/history-page/history-page";
@@ -10,6 +11,7 @@ import "./styles.css";
 export function App() {
   // Overlays render inside data-app, where this app's scoped styles apply.
   const [appElement, setAppElement] = useState<HTMLDivElement | null>(null);
+  const appPath = useAppPath();
 
   return (
     <div data-app="lista-compra" ref={setAppElement}>
@@ -17,10 +19,10 @@ export function App() {
         <section className="px-4 py-5">
           <h2>Lista de la compra</h2>
           <nav aria-label="Lista de la compra">
-            <NavLink to="." end>
+            <NavLink to={appPath()} end>
               Lista
             </NavLink>{" "}
-            · <NavLink to="historial">Historial</NavLink>
+            · <NavLink to={appPath("historial")}>Historial</NavLink>
           </nav>
           <Routes>
             <Route index element={<ShoppingListPage />} />

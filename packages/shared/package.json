@@ -15,6 +15,10 @@
     "@types/react": "catalog:",
     "typescript": "catalog:",
     "eslint": "catalog:",
-    "jiti": "catalog:"
+    "jiti": "catalog:",
+    "react-router": "catalog:"
+  },
+  "peerDependencies": {
+    "react-router": "catalog:"
   }
 }
