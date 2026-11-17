@@ -35,11 +35,28 @@ export const mdxComponents: MDXComponents = {
       {children}
     </h2>
   ),
+  h3: ({ children, ...props }) => (
+    <h3 className="mt-6 mb-2 font-semibold" {...props}>
+      {children}
+    </h3>
+  ),
   p: (props) => <p className="mb-3" {...props} />,
   ul: (props) => <ul className="mb-3 list-disc pl-6" {...props} />,
-  // Links inside the design system go through the router (no page reload).
   a: MdxLink,
   code: (props) => (
     <code className="rounded-sm bg-muted px-1 font-mono text-sm" {...props} />
   ),
+  pre: (props) => (
+    <pre
+      className="mb-4 overflow-x-auto rounded-lg bg-muted p-3 text-sm [&_code]:p-0"
+      {...props}
+    />
+  ),
+  table: (props) => (
+    <table className="mb-4 w-full border-collapse text-sm" {...props} />
+  ),
+  th: (props) => (
+    <th className="border-b px-2 py-1 text-left font-semibold" {...props} />
+  ),
+  td: (props) => <td className="border-b px-2 py-1 align-top" {...props} />,
 };

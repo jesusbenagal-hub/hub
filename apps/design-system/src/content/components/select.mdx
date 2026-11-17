@@ -1,0 +1,24 @@
+import { Example } from "../../components/example/example";
+import { SelectFilter } from "../../examples/select-filter";
+import selectFilterCode from "../../examples/select-filter?raw";
+
+# Select
+
+Elegir una opción de una lista corta. Con `items`, el disparador sabe qué
+texto mostrar para cada valor.
+
+<Example code={selectFilterCode}>
+  <SelectFilter />
+</Example>
+
+## Props
+
+| Componente      | Prop                     | Qué hace                   |
+| --------------- | ------------------------ | -------------------------- |
+| `Select`        | `items`                  | Valores y etiquetas        |
+| `Select`        | `value` / `defaultValue` | Valor controlado o inicial |
+| `Select`        | `onValueChange`          | Recibe el valor elegido    |
+| `SelectTrigger` | `size`                   | `sm`, `default`            |
+
+La lista se abre en un portal dentro del `data-app` de la app (ver
+[AlertDialog](componentes/alert-dialog)).

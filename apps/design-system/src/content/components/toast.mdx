@@ -1,0 +1,16 @@
+import { Example } from "../../components/example/example";
+import { ToastOnDelete } from "../../examples/toast-on-delete";
+import toastOnDeleteCode from "../../examples/toast-on-delete?raw";
+
+# Toast
+
+Un aviso breve que confirma algo que ya ha pasado. Desaparece solo; no se usa
+para errores que exigen hacer algo.
+
+<Example code={toastOnDeleteCode}>
+  <ToastOnDelete />
+</Example>
+
+El `toast` es un gestor único en `@hub/ui`. Las apps lo llaman y el
+`<Toaster />` del hub (o el de la app, en standalone) lo pinta; funciona porque
+`@hub/ui` se comparte como una sola copia.

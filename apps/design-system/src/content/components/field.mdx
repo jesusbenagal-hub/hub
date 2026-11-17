@@ -1,0 +1,36 @@
+import { Example } from "../../components/example/example";
+import { FieldWithError } from "../../examples/field-with-error";
+import fieldWithErrorCode from "../../examples/field-with-error?raw";
+import { FieldWithInput } from "../../examples/field-with-input";
+import fieldWithInputCode from "../../examples/field-with-input?raw";
+
+# Field e Input
+
+`Field` coloca la etiqueta, el campo, la ayuda y el error. Es solo maquetación:
+los `id` y los atributos ARIA los conecta quien lo usa (con `useId`).
+
+## Normal
+
+<Example code={fieldWithInputCode}>
+  <FieldWithInput />
+</Example>
+
+## Con error
+
+<Example code={fieldWithErrorCode}>
+  <FieldWithError />
+</Example>
+
+`FieldError` se anuncia (`role="alert"`) y no pinta nada si está vacío. El
+`Input` usa 16 px para que iOS no haga zoom al enfocarlo.
+
+## Props
+
+| Componente | Prop           | Valores                                              |
+| ---------- | -------------- | ---------------------------------------------------- |
+| `Field`    | `orientation`  | `vertical` (por defecto), `horizontal`, `responsive` |
+| `Field`    | `data-invalid` | Pinta la etiqueta y el campo como error              |
+| `Input`    | `aria-invalid` | Borde de error                                       |
+
+También exporta `FieldSet`, `FieldLegend`, `FieldGroup`, `FieldContent`,
+`FieldTitle` y `FieldSeparator` para formularios más grandes.

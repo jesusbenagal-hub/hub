@@ -5,6 +5,7 @@ import { useAppPath } from "@hub/shared";
 import { PortalContainerProvider } from "@hub/ui";
 
 import { mdxComponents } from "./components/mdx-components/mdx-components";
+import { componentPages } from "./content/component-pages";
 import Components from "./content/components.mdx";
 import Introduction from "./content/introduction.mdx";
 import Patterns from "./content/patterns.mdx";
@@ -65,6 +66,13 @@ export function App() {
               />
               {sections.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
+              ))}
+              {componentPages.map(({ slug, element }) => (
+                <Route
+                  key={slug}
+                  path={`componentes/${slug}`}
+                  element={element}
+                />
               ))}
             </Routes>
           </article>

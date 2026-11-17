@@ -1,0 +1,22 @@
+import { Example } from "../../components/example/example";
+import { ItemList } from "../../examples/item-list";
+import itemListCode from "../../examples/item-list?raw";
+
+# Item
+
+Una fila de una lista: contenido a la izquierda y acciones a la derecha.
+
+<Example code={itemListCode}>
+  <ItemList />
+</Example>
+
+`ItemGroup` es `role="list"`, pero `Item` es un `div`: dentro de un grupo
+necesita `role="listitem"`, o pintarse como otro elemento con `render`.
+
+| Prop      | Valores                       | Por defecto |
+| --------- | ----------------------------- | ----------- |
+| `variant` | `default`, `outline`, `muted` | `default`   |
+| `size`    | `default`, `sm`, `xs`         | `default`   |
+| `render`  | Elemento con el que pintarlo  | `<div>`     |
+
+También exporta `ItemMedia`, `ItemHeader`, `ItemFooter` e `ItemSeparator`.

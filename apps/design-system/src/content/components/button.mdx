@@ -1,0 +1,35 @@
+import { Example } from "../../components/example/example";
+import { ButtonSizes } from "../../examples/button-sizes";
+import buttonSizesCode from "../../examples/button-sizes?raw";
+import { ButtonVariants } from "../../examples/button-variants";
+import buttonVariantsCode from "../../examples/button-variants?raw";
+
+# Button
+
+Ejecuta una acción. Para navegar se usa un enlace, no un botón.
+
+## Variantes
+
+<Example code={buttonVariantsCode}>
+  <ButtonVariants />
+</Example>
+
+`default` para la acción principal de la pantalla (una sola), `outline` y
+`secondary` para las demás, `ghost` para acciones discretas en filas y
+`destructive` solo para confirmar algo que no se puede deshacer.
+
+## Tamaños, iconos y estados
+
+<Example code={buttonSizesCode}>
+  <ButtonSizes />
+</Example>
+
+Un botón solo con icono necesita `aria-label`; el icono va con `aria-hidden`.
+
+## Props
+
+| Prop      | Valores                                                              | Por defecto |
+| --------- | -------------------------------------------------------------------- | ----------- |
+| `variant` | `default`, `outline`, `secondary`, `ghost`, `destructive`, `link`    | `default`   |
+| `size`    | `xs`, `sm`, `default`, `lg`, `icon-xs`, `icon-sm`, `icon`, `icon-lg` | `default`   |
+| `render`  | Elemento con el que pintarlo (p. ej. dentro de un `…Trigger`)        | `<button>`  |

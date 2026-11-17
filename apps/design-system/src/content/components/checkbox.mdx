@@ -1,0 +1,24 @@
+import { Example } from "../../components/example/example";
+import { CheckboxWithLabel } from "../../examples/checkbox-with-label";
+import checkboxWithLabelCode from "../../examples/checkbox-with-label?raw";
+
+# Checkbox y Label
+
+Una casilla para marcar o desmarcar. Siempre dentro de un `Label`, para que el
+texto también la active y tenga nombre accesible.
+
+<Example code={checkboxWithLabelCode}>
+  <CheckboxWithLabel />
+</Example>
+
+El estado se expone en `data-checked`, así que el texto se puede tachar solo
+con CSS: `has-checked:line-through` en el `Label`.
+
+## Props de `Checkbox`
+
+| Prop              | Qué hace                             |
+| ----------------- | ------------------------------------ |
+| `checked`         | Estado controlado                    |
+| `defaultChecked`  | Estado inicial si no está controlado |
+| `onCheckedChange` | Recibe el nuevo estado               |
+| `disabled`        | La desactiva                         |

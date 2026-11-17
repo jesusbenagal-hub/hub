@@ -1,0 +1,30 @@
+import { Example } from "../../components/example/example";
+import { AlertDialogConfirm } from "../../examples/alert-dialog-confirm";
+import alertDialogConfirmCode from "../../examples/alert-dialog-confirm?raw";
+
+# AlertDialog
+
+Pide confirmación antes de algo que no se puede deshacer. Bloquea la página
+hasta que se elige una opción.
+
+<Example code={alertDialogConfirmCode}>
+  <AlertDialogConfirm />
+</Example>
+
+| Prop de `AlertDialogContent` | Valores         |
+| ---------------------------- | --------------- |
+| `size`                       | `default`, `sm` |
+
+## Portales: `PortalContainerProvider`
+
+Los diálogos, los `Select` y los avisos se pintan en un portal, fuera del árbol
+de la app. Cada remote apunta los portales a su `<div data-app>`, donde llegan
+sus estilos:
+
+```tsx
+const [appElement, setAppElement] = useState<HTMLDivElement | null>(null);
+
+<div data-app="lista-compra" ref={setAppElement}>
+  <PortalContainerProvider container={appElement}>…</PortalContainerProvider>
+</div>;
+```

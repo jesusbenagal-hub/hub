@@ -15,6 +15,7 @@
     "@hub/shared": "workspace:*",
     "@hub/tokens": "workspace:*",
     "@hub/ui": "workspace:*",
+    "@phosphor-icons/react": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router": "catalog:"
@@ -32,6 +33,7 @@
     "eslint": "catalog:",
     "jiti": "catalog:",
     "jsdom": "catalog:",
+    "remark-gfm": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
