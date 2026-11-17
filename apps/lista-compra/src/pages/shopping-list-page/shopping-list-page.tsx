@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-import { toast } from "@hub/ui";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  ItemGroup,
+  toast,
+} from "@hub/ui";
 
 import { AddItemForm } from "../../components/add-item-form/add-item-form";
 import { ItemFilterSelect } from "../../components/item-filter-select/item-filter-select";
@@ -27,39 +35,46 @@ export function ShoppingListPage() {
   });
 
   return (
-    <>
-      <AddItemForm
-        items={items}
-        onAdd={(name) => {
-          setItems((previous) => [...previous, name]);
-        }}
-      />
-      <ItemFilterSelect value={filter} onChange={setFilter} />
-      <ul>
-        {visibleItems.map((item) => (
-          <ItemRow
-            key={item}
-            name={item}
-            isPurchased={purchasedItems.has(item)}
-            onToggle={() => {
-              togglePurchased(item);
-            }}
-            onDelete={() => {
-              if (purchasedItems.has(item)) {
+    <Card className="max-w-96">
+      <CardHeader>
+        <CardTitle>Productos</CardTitle>
+        <CardDescription>
+          {purchasedItems.size} de {items.length} en el carro
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <AddItemForm
+          items={items}
+          onAdd={(name) => {
+            setItems((previous) => [...previous, name]);
+          }}
+        />
+        <ItemFilterSelect value={filter} onChange={setFilter} />
+        <ItemGroup aria-label="Productos" className="gap-2">
+          {visibleItems.map((item) => (
+            <ItemRow
+              key={item}
+              name={item}
+              isPurchased={purchasedItems.has(item)}
+              onToggle={() => {
                 togglePurchased(item);
-              }
-              setItems((previous) => previous.filter((name) => name !== item));
-              toast.add({
-                title: "Borrado",
-                description: `«${item}» ya no está en la lista.`,
-              });
-            }}
-          />
-        ))}
-      </ul>
-      <p>
-        {purchasedItems.size} de {items.length} en el carro
-      </p>
-    </>
+              }}
+              onDelete={() => {
+                if (purchasedItems.has(item)) {
+                  togglePurchased(item);
+                }
+                setItems((previous) =>
+                  previous.filter((name) => name !== item),
+                );
+                toast.add({
+                  title: "Borrado",
+                  description: `«${item}» ya no está en la lista.`,
+                });
+              }}
+            />
+          ))}
+        </ItemGroup>
+      </CardContent>
+    </Card>
   );
 }

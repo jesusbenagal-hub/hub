@@ -12,6 +12,13 @@ describe("ShoppingListPage", () => {
     expect(screen.getByText("0 de 3 en el carro")).toBeInTheDocument();
   });
 
+  it("shows the items as a list", () => {
+    render(<ShoppingListPage />);
+
+    const list = screen.getByRole("list", { name: "Productos" });
+    expect(within(list).getAllByRole("listitem")).toHaveLength(3);
+  });
+
   it("counts an item as purchased when its checkbox is clicked", async () => {
     const user = userEvent.setup();
     render(<ShoppingListPage />);

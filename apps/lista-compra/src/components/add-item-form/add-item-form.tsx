@@ -37,7 +37,7 @@ export function AddItemForm({ items, onAdd }: AddItemFormProps) {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit} className="mb-4 max-w-80">
+    <form noValidate onSubmit={handleSubmit}>
       <Field data-invalid={hasError}>
         <FieldLabel htmlFor={inputId}>Producto</FieldLabel>
         <div className="flex gap-2">

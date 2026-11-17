@@ -18,6 +18,15 @@ export {
   AlertDialogTrigger,
 } from "./components/alert-dialog";
 export { Button, buttonVariants } from "./components/button";
+export {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./components/card";
 export { Checkbox } from "./components/checkbox";
 export {
   Field,
@@ -32,6 +41,18 @@ export {
   FieldTitle,
 } from "./components/field";
 export { Input } from "./components/input";
+export {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemFooter,
+  ItemGroup,
+  ItemHeader,
+  ItemMedia,
+  ItemSeparator,
+  ItemTitle,
+} from "./components/item";
 export { Label } from "./components/label";
 export {
   PortalContainerProvider,

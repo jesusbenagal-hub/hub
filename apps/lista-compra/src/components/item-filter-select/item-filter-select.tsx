@@ -27,7 +27,7 @@ export function ItemFilterSelect({ value, onChange }: ItemFilterSelectProps) {
   const triggerId = useId();
 
   return (
-    <Field orientation="horizontal" className="mb-2 max-w-80">
+    <Field orientation="horizontal">
       <FieldLabel htmlFor={triggerId}>Mostrar</FieldLabel>
       <Select
         items={options}

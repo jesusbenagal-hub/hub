@@ -44,8 +44,8 @@ describe("Select", () => {
     );
 
     await user.click(screen.getByRole("combobox", { name: "Mostrar" }));
-    expect(appElement).toContainElement(screen.getByRole("listbox"));
-    await user.click(screen.getByRole("option", { name: "Pendientes" }));
+    expect(appElement).toContainElement(await screen.findByRole("listbox"));
+    await user.click(await screen.findByRole("option", { name: "Pendientes" }));
 
     expect(screen.getByRole("combobox", { name: "Mostrar" })).toHaveTextContent(
       "Pendientes",
