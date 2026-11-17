@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Hub</title>
+    <script>
+      // Apply the saved theme before the first paint (no light flash in dark
+      // mode). Same key as THEME_STORAGE_KEY in src/types/theme.ts.
+      try {
+        const theme = localStorage.getItem("hub-theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

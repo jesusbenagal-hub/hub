@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router";
 
 import type { LoadedRemote } from "../../types/remote";
+import { ThemeSelect } from "../theme-select/theme-select";
 
 interface HubLayoutProps {
   remotes: LoadedRemote[];
@@ -9,9 +10,9 @@ interface HubLayoutProps {
 export function HubLayout({ remotes }: HubLayoutProps) {
   return (
     <>
-      <header className="border-b px-6 py-3">
-        <nav aria-label="Apps del hub">
-          <ul className="flex gap-6">
+      <header className="flex items-center justify-between gap-4 border-b px-4 py-2 sm:px-6">
+        <nav aria-label="Apps del hub" className="overflow-x-auto">
+          <ul className="flex gap-6 whitespace-nowrap">
             <li>
               <NavLink to="/" end className="font-semibold">
                 Hub
@@ -29,6 +30,7 @@ export function HubLayout({ remotes }: HubLayoutProps) {
             ))}
           </ul>
         </nav>
+        <ThemeSelect />
       </header>
       <main className="px-4 py-4 sm:px-6">
         <Outlet />
